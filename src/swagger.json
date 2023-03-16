@@ -14,7 +14,7 @@
             "description": "OK"
           },
           "500": {
-            "description": "Serverless error."
+            "description": "Server error."
           }
         }
       },
@@ -53,7 +53,7 @@
             "description": "Bad request."
           },
           "500": {
-            "description": "Serverless error."
+            "description": "Server error."
           }
         }
       }
@@ -102,7 +102,7 @@
             "description": "Bad request."
           },
           "500": {
-            "description": "Serverless error."
+            "description": "Server error."
           }
         }
       }
@@ -152,7 +152,7 @@
             "description": "Bad request."
           },
           "500": {
-            "description": "Serverless error."
+            "description": "Server error."
           }
         }
       }
