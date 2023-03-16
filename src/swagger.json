@@ -1,0 +1,161 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Store API",
+    "description": "This is a demo api",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/store": {
+      "get": {
+        "description": "Get a list of stores.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Serverless error."
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new store",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "MEGA STORE"
+                  },
+                  "address": {
+                    "type": "string",
+                    "example": "Anakara / Kızılay"
+                  },
+                  "phone": {
+                    "type": "string",
+                    "example": "3121234567"
+                  }
+                },
+                "required": ["name", "address", "phone"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad request."
+          },
+          "500": {
+            "description": "Serverless error."
+          }
+        }
+      }
+    },
+    "/personal": {
+      "post": {
+        "description": "Create new product for a store.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Chef"
+                  },
+                  "department": {
+                    "type": "string",
+                    "example": "Cell Phones"
+                  },
+                  "age": {
+                    "type": "number",
+                    "example": 25
+                  },
+                  "phone": {
+                    "type": "string",
+                    "example": "5051230011"
+                  },
+                  "store_id": {
+                    "type": "string",
+                    "example": "MongoDB id of an existing store"
+                  }
+                },
+                "required": ["name", "department", "age", "phone", "store_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad request."
+          },
+          "500": {
+            "description": "Serverless error."
+          }
+        }
+      }
+    },
+    "/product": {
+      "post": {
+        "description": "Create new product for a store.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Protective Glass"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Protective glass for Xiaomi cell phones."
+                  },
+                  "price": {
+                    "type": "number",
+                    "format": "double",
+                    "example": 10.23
+                  },
+                  "stock": {
+                    "type": "number",
+                    "example": "6"
+                  },
+                  "store_id": {
+                    "type": "string",
+                    "example": "MongoDB id of an existing store"
+                  }
+                },
+                "required": ["name", "description", "price", "store_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad request."
+          },
+          "500": {
+            "description": "Serverless error."
+          }
+        }
+      }
+    }
+  }
+}
